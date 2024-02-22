@@ -2,7 +2,7 @@ import random
 import csv
 
 def generate_parking_row(rows_number: int):
-    rows = []
+    rows = [['empty_count', 'longitude', 'latitude']]
 
     for _ in range(rows_number):
         row = [int(random.uniform(10, 50)), random.uniform(10, 50), random.uniform(10, 50)]
