@@ -1,4 +1,3 @@
-from typing import List
 from csv import reader
 from datetime import datetime
 from domain.aggregated_data import AggregatedData, Accelerometer, Gps
