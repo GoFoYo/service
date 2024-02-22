@@ -1,7 +1,8 @@
 from typing import List
 from csv import reader
 from datetime import datetime
-from domain.aggregated_data import AggregatedData, Accelerometer, Gps, Parking
+from domain.aggregated_data import AggregatedData, Accelerometer, Gps
+from domain.parking import Parking
 
 class FileDatasource:
     def __init__(self, accelerometer_filename: str, gps_filename: str, parking_filename:str) -> None:
@@ -18,7 +19,7 @@ class FileDatasource:
         """Метод повертає True якщо читання даних завершено"""
         return self.is_reading_finished
 
-    def read(self) -> AggregatedData | None:
+    def read(self) -> tuple[AggregatedData, Parking]:
         """Метод повертає дані отримані з датчиків"""
         if (self.iteration == 0):
             self.startReading()
